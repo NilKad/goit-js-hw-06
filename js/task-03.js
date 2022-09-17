@@ -16,20 +16,45 @@ const images = [
 const galleryRef = document.querySelector(".gallery");
 console.log(galleryRef);
 
-//**************** v1 *****************//
-const makeLiImagesOptions = (options) => {
-  return options.map(({ url, alt }) => {
-    const liRef = document.createElement("li");
-    liRef.classList = "gallery__item";
+// //**************** v1 *****************//
+// const makeLiImagesOptions = (options) => {
+//   return options.map(({ url, alt }) => {
+//     const liRef = document.createElement("li");
+//     liRef.classList = "gallery__item";
 
-    const imgRef = document.createElement("img");
-    imgRef.src = url;
-    imgRef.alt = alt;
-    imgRef.classList = "gallery__img";
-    imgRef.width = "600";
+//     const imgRef = document.createElement("img");
+//     imgRef.src = url;
+//     imgRef.alt = alt;
+//     imgRef.classList = "gallery__img";
+//     imgRef.width = "600";
 
-    liRef.append(imgRef);
-    return liRef;
-  });
+//     liRef.append(imgRef);
+//     return liRef;
+//   });
+// };
+// galleryRef.append(...makeLiImagesOptions(images));
+
+// **************** v2 ***************** //
+// const makeLiImagesOptions = ({ url, alt }) => {
+//   const liRef = document.createElement("li");
+//   liRef.classList = "gallery__item";
+
+//   const imgRef = document.createElement("img");
+//   imgRef.src = url;
+//   imgRef.alt = alt;
+//   imgRef.classList = "gallery__img";
+//   imgRef.width = "600";
+
+//   liRef.append(imgRef);
+//   return liRef;
+// };
+
+// galleryRef.append(...images.map(makeLiImagesOptions));
+
+//**************** v3 *****************//
+const makeLiImgMarkup = ({ url, alt }) => {
+  return `<li class='gallery__item' ><img class='gallery__img' src=${url} alt=${alt} ></li>`;
 };
-galleryRef.append(...makeLiImagesOptions(images));
+const makeLiImgLine = images.map(makeLiImgMarkup).join("");
+
+galleryRef.insertAdjacentHTML("beforeend", makeLiImgLine);
