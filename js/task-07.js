@@ -4,4 +4,4 @@ const textRef = document.querySelector("#text");
 const changeFontSize = (event) =>
   (textRef.style.fontSize = event.target.value + "px");
 
-inputRangeRef.addEventListener("change", changeFontSize);
+inputRangeRef.addEventListener("input", changeFontSize);
