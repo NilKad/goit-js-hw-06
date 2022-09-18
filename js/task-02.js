@@ -17,6 +17,6 @@ const makeLiOptions = (options) => {
   });
 };
 
-console.log(makeLiOptions(ingredients));
+// console.log(makeLiOptions(ingredients));
 
 ingredientsEl.append(...makeLiOptions(ingredients));
