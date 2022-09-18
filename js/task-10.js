@@ -22,10 +22,10 @@ const createDiv = (amount) => {
     boxesTarget.append(...arrayDiv);
   }
 };
+const readInput = () => Number(inputNumberRef.value);
 
 const readInputAndCreate = () => {
-  const amount = Number(inputNumberRef.value);
-  createDiv(amount);
+  createDiv(readInput());
 };
 
 btnCreateRef.addEventListener("click", readInputAndCreate);
