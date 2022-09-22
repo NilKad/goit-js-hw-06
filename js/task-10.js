@@ -3,13 +3,13 @@ const boxesTarget = document.querySelector("#boxes");
 const btnCreateRef = document.querySelector("[data-create]");
 const btnDestroyRef = document.querySelector("[data-destroy]");
 const inputNumberRef = document.querySelector('#controls [type="number"]');
+let sizeBlock = 30;
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
 const createDiv = (amount) => {
-  let sizeBlock = 30;
   const arrayDiv = [];
 
   for (let i = 0; i < amount; i++, sizeBlock += 10) {
