@@ -53,8 +53,7 @@ console.log(galleryRef);
 
 //**************** v3 *****************//
 const makeLiImgMarkup = ({ url, alt }) => {
-  return `<li class='gallery__item' ><img class='gallery__img' src=${url} alt=${alt} ></li>`;
+  return `<li class='gallery__item' ><img class='gallery__img' src='${url}' alt='${alt}' ></li>`;
 };
 const makeLiImgLine = images.map(makeLiImgMarkup).join("");
-
 galleryRef.insertAdjacentHTML("beforeend", makeLiImgLine);
